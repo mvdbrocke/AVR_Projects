@@ -30,7 +30,7 @@
  */
 //#include <asf.h>
 
-#define F_CPU 16E6
+#define F_CPU 1E6
 
 #include "led_handler.h"
 #include "input_handler.h"
@@ -71,6 +71,10 @@ int main (void)
 			
 		_delay_ms(500);
 	}
+	set_led(0,0);
+	set_led(1,0);
+	set_led(2,0);
+	set_led(3,0);
 	
 	while(1)
 	{
@@ -114,14 +118,16 @@ int main (void)
 		}
 		else
 		{	enable_light(0x00);
-			set_led(0,0xFF);
+			set_led(0,0x00);
 		}
 		
 		//blink test led
 		blink_led_ctr++;
 		if(blink_led_ctr==1000)
-			blink_led_state = ~blink_led_state;
-		set_led(4,0xFF);
+		{	blink_led_state = ~blink_led_state;
+			blink_led_ctr = 0;
+		}
+		set_led(2,blink_led_state);
 		
 	}
 

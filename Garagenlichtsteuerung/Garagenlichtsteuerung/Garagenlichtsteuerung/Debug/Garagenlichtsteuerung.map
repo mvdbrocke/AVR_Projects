@@ -195,7 +195,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x00000000      0x24a
+.text           0x00000000      0x284
  *(.vectors)
  .vectors       0x00000000       0x26 C:/Program Files/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.0.90/gcc/dev/atmega8/avr4/crtatmega8.o
                 0x00000000                __vector_default
@@ -273,26 +273,26 @@ END GROUP
                 0x00000038        0xa src/input_handler.o
                 0x00000038                init_inputs
  .text.get_input_val
-                0x00000042       0x44 src/input_handler.o
+                0x00000042       0x4a src/input_handler.o
                 0x00000042                get_input_val
  .text.get_hvps_in_val
-                0x00000086        0xe src/input_handler.o
-                0x00000086                get_hvps_in_val
+                0x0000008c        0xe src/input_handler.o
+                0x0000008c                get_hvps_in_val
  .text.init_leds
-                0x00000094       0x12 src/led_handler.o
-                0x00000094                init_leds
- .text.set_led  0x000000a6       0x40 src/led_handler.o
-                0x000000a6                set_led
+                0x0000009a       0x12 src/led_handler.o
+                0x0000009a                init_leds
+ .text.set_led  0x000000ac       0x40 src/led_handler.o
+                0x000000ac                set_led
  .text.enable_light
-                0x000000e6        0xc src/led_handler.o
-                0x000000e6                enable_light
- .text.main     0x000000f2      0x154 src/main.o
-                0x000000f2                main
-                0x00000246                . = ALIGN (0x2)
+                0x000000ec        0xc src/led_handler.o
+                0x000000ec                enable_light
+ .text.main     0x000000f8      0x188 src/main.o
+                0x000000f8                main
+                0x00000280                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000246        0x0 c:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr4\libgcc.a(_exit.o)
-                0x00000246                _exit
-                0x00000246                exit
+ .fini9         0x00000280        0x0 c:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr4\libgcc.a(_exit.o)
+                0x00000280                _exit
+                0x00000280                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -311,11 +311,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000246        0x4 c:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr4\libgcc.a(_exit.o)
+ .fini0         0x00000280        0x4 c:/program files/atmel/studio/7.0/toolchain/avr8/avr8-gnu-toolchain/bin/../lib/gcc/avr/4.9.2/avr4\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000024a                _etext = .
+                0x00000284                _etext = .
 
-.data           0x00800060        0x0 load address 0x0000024a
+.data           0x00800060        0x0 load address 0x00000284
                 0x00800060                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -332,8 +332,8 @@ END GROUP
  *(.bss*)
  *(COMMON)
                 0x00800060                PROVIDE (__bss_end, .)
-                0x0000024a                __data_load_start = LOADADDR (.data)
-                0x0000024a                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x00000284                __data_load_start = LOADADDR (.data)
+                0x00000284                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x00800060        0x0
                 0x00800060                PROVIDE (__noinit_start, .)
@@ -418,11 +418,11 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000      0x61e
+.debug_info     0x00000000      0x67e
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x00000000       0xee src/input_handler.o
  .debug_info    0x000000ee       0xe0 src/led_handler.o
- .debug_info    0x000001ce      0x450 src/main.o
+ .debug_info    0x000001ce      0x4b0 src/main.o
 
 .debug_abbrev   0x00000000      0x2c9
  *(.debug_abbrev)
@@ -430,11 +430,11 @@ END GROUP
  .debug_abbrev  0x000000a8       0xa4 src/led_handler.o
  .debug_abbrev  0x0000014c      0x17d src/main.o
 
-.debug_line     0x00000000      0x873
+.debug_line     0x00000000      0x8bb
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x00000000      0x2ac src/input_handler.o
  .debug_line    0x000002ac      0x2de src/led_handler.o
- .debug_line    0x0000058a      0x2e9 src/main.o
+ .debug_line    0x0000058a      0x331 src/main.o
 
 .debug_frame    0x00000000       0xac
  *(.debug_frame)
@@ -442,19 +442,19 @@ END GROUP
  .debug_frame   0x00000044       0x44 src/led_handler.o
  .debug_frame   0x00000088       0x24 src/main.o
 
-.debug_str      0x00000000     0x5e14
+.debug_str      0x00000000     0x5e13
  *(.debug_str)
  .debug_str     0x00000000     0x58f8 src/input_handler.o
                                0x5995 (size before relaxing)
  .debug_str     0x000058f8       0x4c src/led_handler.o
                                0x597d (size before relaxing)
- .debug_str     0x00005944      0x4d0 src/main.o
-                               0x3ccc (size before relaxing)
+ .debug_str     0x00005944      0x4cf src/main.o
+                               0x3ccb (size before relaxing)
 
-.debug_loc      0x00000000      0x2c4
+.debug_loc      0x00000000      0x30f
  *(.debug_loc)
  .debug_loc     0x00000000       0xcc src/input_handler.o
- .debug_loc     0x000000cc      0x1f8 src/main.o
+ .debug_loc     0x000000cc      0x243 src/main.o
 
 .debug_macinfo
  *(.debug_macinfo)
