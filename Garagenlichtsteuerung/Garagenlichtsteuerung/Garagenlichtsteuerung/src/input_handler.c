@@ -3,7 +3,7 @@
 #include <avr/io.h>
 #include "input_handler.h"
 #include "pin_definition.h"
-#include <delay.h>
+
 
 void init_inputs(void)
 {

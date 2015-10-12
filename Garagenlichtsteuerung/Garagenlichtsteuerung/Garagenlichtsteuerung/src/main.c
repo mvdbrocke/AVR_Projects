@@ -29,10 +29,13 @@
  * Support and FAQ: visit <a href="http://www.atmel.com/design-support/">Atmel Support</a>
  */
 //#include <asf.h>
+
+#define F_CPU 16E6
+
 #include "led_handler.h"
 #include "input_handler.h"
-#include <delay.h>
-#include <compiler.h>
+#include <util/delay.h>
+
 
 #define LIGHT_ON_MS 300000
 
@@ -66,12 +69,12 @@ int main (void)
 		if(init_ctr&0x08)
 			set_led(3,1);
 			
-		cpu_delay_ms(500,16E6);
+		_delay_ms(500);
 	}
 	
 	while(1)
 	{
-		cpu_delay_ms(1,16E6);
+		_delay_ms(1);
 		
 		//handle light on static
 		if(get_input_val(0)||get_input_val(1)||get_input_val(2)||get_input_val(3))
